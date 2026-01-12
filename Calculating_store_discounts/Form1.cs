@@ -99,14 +99,14 @@ namespace Calculating_store_discounts_
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            double total = double.Parse(tb_total.Text);
+            double total;
             bool member = memY.Checked;
-            if(total<0)MessageBox.Show("กรุณาใส่ยอดซื้อที่ถูกต้อง","ข้อผิดพลาด");
-            else 
-            {
+
+            if (double.TryParse(tb_total.Text, out total) && total > 0) {
                 StoreDiscountCalculator cal = new StoreDiscountCalculator(total, member);
                 cal.getReceipt(tb_receipt);
             }
+            else MessageBox.Show("กรุณาใส่ยอดซื้อที่ถูกต้อง", "ข้อผิดพลาด");
         }
     }
 }
