@@ -82,7 +82,7 @@ namespace Calculating_store_discounts_
                 {
                     tb_receipt.AppendText($"ได้รับส่วนลดระดับ: {DisRank} {discountPercent}%" + Environment.NewLine);
                     if (Member)tb_receipt.AppendText("ได้รับส่วนลดพิเศษสมาชิก +5%"+ Environment.NewLine);
-                    tb_receipt.AppendText($"จำนวนส่วนลด: {discountAmount:F2} บาท"+Environment.NewLine);
+                    tb_receipt.AppendText($"ส่วนลดที่ได้รับ: {discountAmount:F2} บาท"+Environment.NewLine);
                 }
                 tb_receipt.AppendText($"ราคาที่ต้องจ่าย: {finalAmount:F2} บาท");
                 advice();
