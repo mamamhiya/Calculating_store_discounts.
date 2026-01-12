@@ -101,8 +101,12 @@ namespace Calculating_store_discounts_
         {
             double total = double.Parse(tb_total.Text);
             bool member = memY.Checked;
-            StoreDiscountCalculator cal = new StoreDiscountCalculator(total, member);
-            cal.getReceipt(tb_receipt);
+            if(total<0)MessageBox.Show("กรุณาใส่ยอดซื้อที่ถูกต้อง","ข้อผิดพลาด");
+            else 
+            {
+                StoreDiscountCalculator cal = new StoreDiscountCalculator(total, member);
+                cal.getReceipt(tb_receipt);
+            }
         }
     }
 }
